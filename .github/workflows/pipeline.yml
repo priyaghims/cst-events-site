@@ -1,10 +1,5 @@
 name: Site pipeline
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: push
 
 jobs:
   test:
@@ -39,22 +34,8 @@ jobs:
       - name: Generate the site
         run: python build_site.py
 
-      - name: Package the site for publishing
-        uses: actions/upload-pages-artifact@v3
+      - name: Keep the generated site
+        uses: actions/upload-artifact@v4
         with:
+          name: site
           path: dist
-
-  deploy:
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.publish.outputs.page_url }}
-    steps:
-      - name: Publish to GitHub Pages
-        id: publish
-        uses: actions/deploy-pages@v4
