@@ -5,6 +5,7 @@
     { "title": "Orientation", "date": "2027-02-14", "venue": "Auditorium" },
     { "title": "Annual Meeting", "date": "2025-11-02", "venue": "Room 12" },
     { "title": "Coding Contest", "date": "2027-05-20", "venue": "Lab 2" },
-    { "title": "Farewell", "date": "2028-05-25", "venue": "Class IT04" }
+    { "title": "Farewell", "date": "2028-05-25", "venue": "Class IT04" },
+    { "title": "tech talk", "date": "2029-06-25", "venue": "online" }
   ]
 }
